@@ -22,4 +22,12 @@
     <string name="label_key">Id: %s</string>
     <string name="label_participants">%d</string>
 
+    <!--  Text  -->
+
+    <string name="accessibility">Accessibility</string>
+    <string name="activity">Activity</string>
+    <string name="key">Key</string>
+    <string name="participants">Participants</string>
+
+
 </resources>

@@ -19,7 +19,7 @@
     <style name="Widget.Toolbar" parent="Widget.Material3.Toolbar">
         <item name="contentInsetStartWithNavigation">@dimen/dimen_0dp</item>
         <item name="popupTheme">@style/Theme.PopupOverlay</item>
-        <item name="title">@string/app_name</item>
+<!--        <item name="title">@string/app_name</item>-->
         <item name="titleCentered">true</item>
         <item name="titleTextAppearance">@style/FontTitle.XL</item>
     </style>

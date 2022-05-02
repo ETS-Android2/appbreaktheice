@@ -6,6 +6,8 @@ import static br.com.bravi.breaktheice.util.ActivityUtil.addFragment;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Window;
+import android.view.WindowManager;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,6 +30,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle bundle) {
         super.onCreate(bundle);
 
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+
         viewModel = getViewModel(MainActivity.this, MainViewModel.class);
 
         final ActivityMainBinding binding = inflate(getLayoutInflater());
@@ -38,10 +44,10 @@ public class MainActivity extends AppCompatActivity {
 
         addFragment(getSupportFragmentManager(), ActivityListFragment.INSTANCE, binding.container.getId());
 
-        fetchError();
+//        fetchError();
     }
 
-    private void fetchError() {
-        viewModel.error.observe(MainActivity.this, err -> Log.e(LOG, err.getMessage()));
-    }
+//    private void fetchError() {
+//        viewModel.error.observe(MainActivity.this, err -> Log.e(LOG, err.getMessage()));
+//    }
 }
