@@ -8,7 +8,7 @@
 <br>
 <br>
 
-<img src="https://github.com/Danielvfrodrigues/appbreaktheice/blob/main/bti_logo_black_png.png" alt="Break The Ice Logo">
+<img src="https://github.com/Danielvfrodrigues/appbreaktheice/blob/master/app/src/main/res/assets/bti_logo_black_png.png" alt="Break The Ice Logo">
 
 > ### Making idle times productive.
 <br>
@@ -95,7 +95,7 @@ Benefits of using RxJava:
 
 ## 🌎 Application Map
 
-<img src="https://github.com/Danielvfrodrigues/appbreaktheice/blob/main/Break%20The%20Ice-Map.png" alt="Break The Ice Map"> 
+<img src="https://github.com/Danielvfrodrigues/appbreaktheice/blob/master/app/src/main/res/assets/Break%20The%20Ice-Map.png" alt="Break The Ice Map"> 
 <br>
 
 
