@@ -6,6 +6,13 @@
     <com.google.android.material.appbar.MaterialToolbar
         style="@style/Widget.Toolbar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_56dp" />
+        android:layout_height="@dimen/dimen_56dp" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bti_logo_black_png"/>
+
+    </com.google.android.material.appbar.MaterialToolbar>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
