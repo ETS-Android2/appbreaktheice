@@ -1,14 +1,11 @@
 
-![GitHub repo size](https://img.shields.io/github/repo-size/iuricode/README-template?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/iuricode/README-template?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/iuricode/README-template?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/Danielvfrodrigues/appbreaktheice?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/Danielvfrodrigues/appbreaktheice?style=for-the-badge)
 
 <br>
 <br>
 
-<img src="https://github.com/Danielvfrodrigues/appbreaktheice/blob/master/app/src/main/res/assets/bti_logo_black_png.png" alt="Break The Ice Logo">
+<img src="https://github.com/Danielvfrodrigues/appbreaktheice/blob/master/app/src/main/res/drawable/bti_logo_black_png.png" alt="Break The Ice Logo">
 
 > ### Making idle times productive.
 <br>
@@ -95,7 +92,7 @@ Benefits of using RxJava:
 
 ## 🌎 Application Map
 
-<img src="https://github.com/Danielvfrodrigues/appbreaktheice/blob/master/app/src/main/res/assets/Break%20The%20Ice-Map.png" alt="Break The Ice Map"> 
+<img src="https://github.com/Danielvfrodrigues/appbreaktheice/blob/master/app/src/main/res/drawable/break_the_ice_map.png" alt="Break The Ice Map"> 
 <br>
 
 
