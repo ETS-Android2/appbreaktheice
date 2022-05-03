@@ -117,7 +117,7 @@ Download the project and run on Android Studio.
 
 ### Via APK File:
 ```
-https://github.com/Danielvfrodrigues/appbreaktheice/blob/master/BreakTheIceApp.apk
+https://github.com/Danielvfrodrigues/appbreaktheice/tree/master/Release
 ```
 Download the APK file and install it directly in your device.
 <br>
