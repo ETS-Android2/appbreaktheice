@@ -4,9 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/drodrigues/projects/personal/breaktheice/app/src/main/res/drawable/background_card_view.xml" value="0.189" />
+        <entry key="..\:/Users/drodrigues/projects/personal/breaktheice/app/src/main/res/drawable/ic_play.xml" value="0.2435" />
+        <entry key="..\:/Users/drodrigues/projects/personal/breaktheice/app/src/main/res/drawable/ic_star.xml" value="0.2435" />
+        <entry key="..\:/Users/drodrigues/projects/personal/breaktheice/app/src/main/res/layout/activity_details.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/drodrigues/projects/personal/breaktheice/app/src/main/res/layout/activity_details2.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/drodrigues/projects/personal/breaktheice/app/src/main/res/layout/activity_filter_dialog.xml" value="0.33" />
         <entry key="..\:/Users/drodrigues/projects/personal/breaktheice/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/drodrigues/projects/personal/breaktheice/app/src/main/res/layout/dropdown_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/drodrigues/projects/personal/breaktheice/app/src/main/res/layout/example.xml" value="0.1" />
+        <entry key="..\:/Users/drodrigues/projects/personal/breaktheice/app/src/main/res/layout/fragment_activity_detail.xml" value="0.25" />
+        <entry key="..\:/Users/drodrigues/projects/personal/breaktheice/app/src/main/res/layout/fragment_activity_filter.xml" value="0.1" />
         <entry key="..\:/Users/drodrigues/projects/personal/breaktheice/app/src/main/res/layout/fragment_activity_list.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/drodrigues/projects/personal/breaktheice/app/src/main/res/layout/item_activity.xml" value="0.33" />
+        <entry key="..\:/Users/drodrigues/projects/personal/breaktheice/app/src/main/res/layout/item_details.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/drodrigues/projects/personal/breaktheice/app/src/main/res/layout/progress_indicator.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/drodrigues/projects/personal/breaktheice/app/src/main/res/layout/toolbar.xml" value="0.36666666666666664" />
       </map>
     </option>

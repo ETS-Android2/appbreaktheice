@@ -13,6 +13,7 @@ import br.com.bravi.breaktheice.domain.usecase.DeleteActivityUseCase;
 import br.com.bravi.breaktheice.domain.usecase.DoActivityFilteredUseCase;
 import br.com.bravi.breaktheice.domain.usecase.DoActivityUseCase;
 import br.com.bravi.breaktheice.domain.usecase.GetActivitiesUseCase;
+import br.com.bravi.breaktheice.domain.usecase.GetActivityUseCase;
 import br.com.bravi.breaktheice.domain.usecase.InsertActivityUseCase;
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
@@ -30,6 +31,7 @@ public class MainViewModel extends ViewModel {
     private final DoActivityFilteredUseCase _doActivityFilteredUseCase;
     private final DoActivityUseCase _doActivityUseCase;
     private final GetActivitiesUseCase _getActivitiesUseCase;
+    private final GetActivityUseCase _getActivityUseCase;
     private final InsertActivityUseCase _insertActivityUseCase;
 
     public MainViewModel(
@@ -37,12 +39,14 @@ public class MainViewModel extends ViewModel {
             DoActivityFilteredUseCase doActivityFilteredUseCase,
             DoActivityUseCase doActivityUseCase,
             GetActivitiesUseCase getActivitiesUseCase,
+            GetActivityUseCase getActivityUseCase,
             InsertActivityUseCase insertActivityUseCase
     ) {
         _deleteActivityUseCase = deleteActivityUseCase;
         _doActivityFilteredUseCase = doActivityFilteredUseCase;
         _doActivityUseCase = doActivityUseCase;
         _getActivitiesUseCase = getActivitiesUseCase;
+        _getActivityUseCase = getActivityUseCase;
         _insertActivityUseCase = insertActivityUseCase;
     }
 
@@ -52,9 +56,11 @@ public class MainViewModel extends ViewModel {
      * Live Data properties.
      */
     private final MutableLiveData<List<ActivityModel>> _activities = new MutableLiveData<>(new ArrayList<>());
+    private final MutableLiveData<ActivityModel> _activity = new MutableLiveData<>(null);
     private final MutableLiveData<Throwable> _error = new MutableLiveData<>(null);
 
     public LiveData<List<ActivityModel>> activities = _activities;
+    public LiveData<ActivityModel> activity = _activity;
     public LiveData<Throwable> error = _error;
 
     public void deleteActivity(ActivityModel activityModel) {
@@ -124,11 +130,57 @@ public class MainViewModel extends ViewModel {
         });
     }
 
+    public void getActivity(int id) {
+        _getActivityUseCase.invoke(compositeDisposable, new ResourceSubscriber<ActivityModel>() {
+            @Override
+            public void onNext(ActivityModel res) {
+                _activity.postValue(res);
+            }
+
+            @Override
+            public void onError(@NonNull Throwable err) {
+                _error.postValue(err);
+            }
+
+            @Override
+            public void onComplete() {
+            }
+        }, id);
+    }
+
     public void insertActivity(ActivityModel activityModel) {
         _insertActivityUseCase.invoke(compositeDisposable, new DisposableCompletableObserver() {
             @Override
             public void onComplete() {
                 getActivities();
+            }
+
+            @Override
+            public void onError(@NonNull Throwable err) {
+                _error.postValue(err);
+            }
+        }, activityModel);
+    }
+
+    public void updateFinishTime(ActivityModel activityModel) {
+        _insertActivityUseCase.invoke(compositeDisposable, new DisposableCompletableObserver() {
+            @Override
+            public void onComplete() {
+                updateFinishTime(activityModel);
+            }
+
+            @Override
+            public void onError(@NonNull Throwable err) {
+                _error.postValue(err);
+            }
+        }, activityModel);
+    }
+
+    public void updateStartTime(ActivityModel activityModel) {
+        _insertActivityUseCase.invoke(compositeDisposable, new DisposableCompletableObserver() {
+            @Override
+            public void onComplete() {
+                updateStartTime(activityModel);
             }
 
             @Override

@@ -17,9 +17,15 @@ public interface IActivityDataSource {
 
     Observable<ActivityModel> doActivityFiltered(Map<String, String> options);
 
+    Flowable<ActivityModel> getActivity(int id);
+
     Flowable<List<ActivityModel>> getActivities();
 
     void insertActivity(ActivityModel activityModel);
 
     void deleteActivity(ActivityModel activityModel);
+
+//    void updateFinishTime(ActivityModel activityModel);
+//
+//    void updateStartTime(ActivityModel activityModel);
 }

@@ -87,14 +87,23 @@ fun injectBreakTheIceModule(): Module {
             GetActivitiesUseCase(get())
         }
         factory {
+            GetActivityUseCase(get())
+        }
+        factory {
             InsertActivityUseCase(get())
         }
+//        factory {
+//            UpdateFinishTimeUseCase(get())
+//        }
+//        factory {
+//            UpdateStartTimeUseCase(get())
+//        }
 
         /*
          * View Model injection.
          */
         viewModel {
-            MainViewModel(get(), get(), get(), get(), get())
+            MainViewModel(get(), get(), get(), get(), get(), get())
         }
     }
 }

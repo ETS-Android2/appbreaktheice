@@ -55,6 +55,7 @@ public class ActivityUtil {
         }
         fragmentTransaction
                 .replace(viewId, fragment)
+                .addToBackStack(null)
                 .commit();
     }
 
