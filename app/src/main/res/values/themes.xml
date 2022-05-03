@@ -87,9 +87,54 @@
         <item name="useCompatPadding">true</item>
     </style>
 
+    <style name="Widget.CancelButtonDisabled" parent="Widget.Material3.ExtendedFloatingActionButton.Primary">
+        <item name="android:textAppearance">@style/FontLabel.MD</item>
+        <item name="android:textColor">@color/onSecondary</item>
+        <item name="backgroundTint">@color/grey</item>
+        <item name="fabSize">normal</item>
+        <item name="maxImageSize">@dimen/dimen_32dp</item>
+        <item name="iconTint">@color/onSecondary</item>
+        <item name="useCompatPadding">true</item>
+    </style>
+
+    <style name="Widget.CancelButtonEnabled" parent="Widget.Material3.ExtendedFloatingActionButton.Primary">
+        <item name="android:textAppearance">@style/FontLabel.MD</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="backgroundTint">@color/lightRed</item>
+        <item name="fabSize">normal</item>
+        <item name="maxImageSize">@dimen/dimen_32dp</item>
+        <item name="iconTint">@color/grey</item>
+        <item name="useCompatPadding">true</item>
+    </style>
+
+    <style name="Widget.StartButton" parent="Widget.Material3.FloatingActionButton.Primary">
+        <item name="android:layout_width">140dp</item>
+        <item name="android:layout_height">140dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="maxImageSize">140dp</item>
+        <item name="tint">@color/onSecondary</item>
+        <item name="backgroundTint">@color/secondary_stated</item>
+    </style>
+
+    <style name="Widget.FinishButton" parent="Widget.Material3.FloatingActionButton.Primary">
+        <item name="android:layout_width">140dp</item>
+        <item name="android:layout_height">140dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="maxImageSize">140dp</item>
+        <item name="tint">@color/grey</item>
+        <item name="backgroundTint">@color/green</item>
+    </style>
+
     <style name="Widget.Switch" parent="Widget.Material3.CompoundButton.Switch">
         <item name="thumbTint">@color/switch_thumb_stated</item>
         <item name="trackTint">@color/switch_track_stated</item>
+    </style>
+
+    <style name="Theme.Dialog" parent="Theme.Material3.Light.Dialog">
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item>
+        <item name="dialogCornerRadius">@dimen/dimen_12dp</item>
+        <item name="theme">@style/Theme.Appbreaktheice</item>
     </style>
 
     <!-- Font style.  -->

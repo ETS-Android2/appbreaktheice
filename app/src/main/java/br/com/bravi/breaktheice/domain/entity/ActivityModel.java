@@ -25,6 +25,10 @@ public class ActivityModel {
     @SerializedName("activity")
     private String _activity;
 
+//    @ColumnInfo(name = "finish_time")
+//    @SerializedName("finish_time")
+//    private String _finishTime;
+
     @ColumnInfo(name = "key")
     @SerializedName("key")
     private String _key;
@@ -32,6 +36,10 @@ public class ActivityModel {
     @ColumnInfo(name = "link")
     @SerializedName("link")
     private String _link;
+
+//    @ColumnInfo(name = "start_time")
+//    @SerializedName("start_time")
+//    private String _startTime;
 
     @ColumnInfo(name = "type")
     @SerializedName("type")
@@ -49,8 +57,10 @@ public class ActivityModel {
             int id,
             int participants,
             String activity,
+//            String finishTime,
             String key,
             String link,
+//            String startTime,
             String type,
             float accessibility,
             float price
@@ -58,8 +68,10 @@ public class ActivityModel {
         _id = id;
         _participants = participants;
         _activity = activity;
+//        _finishTime = finishTime;
         _key = key;
         _link = link;
+//        _startTime = startTime;
         _type = type;
         _accessibility = accessibility;
         _price = price;
@@ -89,6 +101,14 @@ public class ActivityModel {
         _activity = activity;
     }
 
+//    public String get_finishTime() {
+//        return _finishTime;
+//    }
+
+//    public void set_finishTime(String _finishTime) {
+//        this._finishTime = _finishTime;
+//    }
+
     public String getKey() {
         return _key;
     }
@@ -104,6 +124,14 @@ public class ActivityModel {
     public void setLink(String link) {
         _link = link;
     }
+
+//    public String get_startTime() {
+//        return _startTime;
+//    }
+
+//    public void set_startTime(String _startTime) {
+//        this._startTime = _startTime;
+//    }
 
     public String getType() {
         return _type;
@@ -131,6 +159,6 @@ public class ActivityModel {
 
     @NonNull
     public String toString() {
-        return "[id]: " + _id + ", [participants]: " + _participants + ", [activity]: " + _activity + ", [key]: " + _key + ", [link]: " + _link + ", [type]: " + _type + ", [accessibility]: " + _accessibility + ", [price]: " + _price;
+        return "[id]: " + _id + ", [participants]: " + _participants + ", [activity]: " + _activity /*+ ", [finishTime]: " +  _finishTime*/ + ", [key]: " + _key + ", [link]: " + _link /*+ ", [startTime]: " + _startTime*/ + ", [type]: " + _type + ", [accessibility]: " + _accessibility + ", [price]: " + _price;
     }
 }

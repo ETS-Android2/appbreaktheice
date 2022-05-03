@@ -28,6 +28,10 @@ public class ActivityRepository {
         return _activityDataSource.doActivityFiltered(options);
     }
 
+    public Flowable<ActivityModel> getActivity(int id) {
+        return _activityDataSource.getActivity(id);
+    }
+
     public Flowable<List<ActivityModel>> getActivities() {
         return _activityDataSource.getActivities();
     }
@@ -39,4 +43,12 @@ public class ActivityRepository {
     public void deleteActivity(ActivityModel activityModel) {
         _activityDataSource.deleteActivity(activityModel);
     }
+
+//    public void updateFinishTime(ActivityModel activityModel) {
+//        _activityDataSource.updateFinishTime(activityModel);
+//    }
+//
+//    public void updateStartTime(ActivityModel activityModel) {
+//        _activityDataSource.updateStartTime(activityModel);
+//    }
 }

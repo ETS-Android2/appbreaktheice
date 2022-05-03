@@ -1,18 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
+        <import type="android.view.View" />
         <variable
             name="viewModel"
             type="br.com.bravi.breaktheice.presentation.viewmodel.MainViewModel" />
 
+        <variable
+            name="cancelButtonEnabled"
+            type="boolean" />
+
     </data>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dimen_16dp"
+            android:background="@drawable/background_card_view"
+            android:padding="@dimen/dimen_12dp">
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/key_text_view"
+                style="@style/FontLabel.SM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="@{viewModel.activity.key}"
+                android:textColor="@color/onSecondary" />
 
-</layout>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/activity_text_view"
+                style="@style/FontLabel.MD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/key_text_view"
+                android:layout_marginTop="8dp"
+                android:layout_alignParentStart="true"
+                android:text="@{viewModel.activity.activity}"
+                android:textColor="@color/onSecondary" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/activity_text_view"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginEnd="@dimen/dimen_2dp"
+                        android:tint="@color/onSecondary"
+                        app:srcCompat="@drawable/ic_accessibility" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/accessibility_text_view"
+                        style="@style/FontLabel.SM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/dimen_2dp"
+                        app:accessibilityText="@{viewModel.activity.accessibility}"
+                        android:textColor="@color/onSecondary" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginEnd="@dimen/dimen_2dp"
+                        android:tint="@color/onSecondary"
+                        app:srcCompat="@drawable/ic_participants" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/participants_text_view"
+                        style="@style/FontLabel.SM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/dimen_2dp"
+                        android:text="@{String.valueOf(viewModel.activity.participants)}"
+                        android:textColor="@color/onSecondary" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/finish_activity_fab"
+                    style="@style/Widget.FinishButton"
+                    android:foregroundTint="@color/onSecondary"
+                    android:src="@drawable/ic_check"
+                    app:fabCustomSize="140dp" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/start_activity_fab"
+                    style="@style/Widget.StartButton"
+                    android:foregroundTint="@color/onSecondary"
+                    android:src="@drawable/ic_play"
+                    android:tint="@color/onSecondary"
+                    app:fabCustomSize="140dp" />
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:id="@+id/cancel_activity_fab_enabled"
+                    style="@style/Widget.CancelButtonEnabled"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="@dimen/dimen_8dp"
+                    android:text="@string/button_cancel_activity"
+                    android:enabled="@{cancelButtonEnabled ? true : false}"
+                    app:icon="@drawable/ic_cancel">
+                </com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton>
+
+                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                    android:id="@+id/cancel_activity_fab_disabled"
+                    style="@style/Widget.CancelButtonDisabled"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="@dimen/dimen_8dp"
+                    android:text="@string/button_cancel_activity"
+                    android:enabled="@{cancelButtonEnabled ? true : false}"
+                    app:icon="@drawable/ic_cancel">
+                </com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/progress_text_view"
+                    style="@style/FontLabel.SM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dimen_2dp"
+                    android:layout_marginTop="320dp"
+                    android:text="@string/progress"
+                    android:textColor="@color/onSecondary"
+                    android:visibility="gone" />
+
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        </RelativeLayout>
+    </layout>

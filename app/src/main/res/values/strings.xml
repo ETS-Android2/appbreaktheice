@@ -7,6 +7,8 @@
     <!-- Button -->
 
     <string name="button_activity">New Activity</string>
+    <string name="button_search">Search</string>
+
 
     <!-- Example -->
 
@@ -28,6 +30,9 @@
     <string name="activity">Activity</string>
     <string name="key">Key</string>
     <string name="participants">Participants</string>
+    <string name="button_cancel_activity">Cancel</string>
+    <string name="progress">Activity in progress...</string>
+    <string name="hint_filter_by_type">Filter by Type</string>
 
 
 </resources>

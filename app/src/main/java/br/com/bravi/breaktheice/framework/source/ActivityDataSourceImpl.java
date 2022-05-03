@@ -38,9 +38,15 @@ public class ActivityDataSourceImpl implements IActivityDataSource {
     }
 
     @Override
+    public Flowable<ActivityModel> getActivity(int id) {
+        return _database.activityDao()
+                .getActivity(id);
+    }
+
+        @Override
     public Flowable<List<ActivityModel>> getActivities() {
         return _database.activityDao()
-                .getAllActivities();
+                .getActivities();
     }
 
     public void insertActivity(ActivityModel activityModel) {
@@ -52,4 +58,16 @@ public class ActivityDataSourceImpl implements IActivityDataSource {
         _database.activityDao()
                 .deleteActivity(activityModel);
     }
+
+//    @Override
+//    public void updateFinishTime(ActivityModel activityModel) {
+//        _database.activityDao()
+//                .updateFinishTime(activityModel);
+//    }
+//
+//    @Override
+//    public void updateStartTime(ActivityModel activityModel) {
+//        _database.activityDao()
+//                .updateStartTime(activityModel);
+//    }
 }

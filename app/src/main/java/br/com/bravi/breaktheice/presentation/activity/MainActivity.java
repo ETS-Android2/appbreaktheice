@@ -17,12 +17,12 @@ import br.com.bravi.breaktheice.presentation.fragment.ActivityListFragment;
 import br.com.bravi.breaktheice.presentation.viewmodel.MainViewModel;
 
 /**
- * @author Raphael Santos
+ * @author Daniel Rodrigues
  * "Sometimes I believe the compiler ignores all my comments."
  */
 public class MainActivity extends AppCompatActivity {
 
-    private final static String LOG = "MainActivity";
+    private final static String TAG = "MainActivity";
 
     private MainViewModel viewModel;
 
@@ -42,12 +42,16 @@ public class MainActivity extends AppCompatActivity {
         binding.setLifecycleOwner(MainActivity.this);
         binding.setViewModel(viewModel);
 
-        addFragment(getSupportFragmentManager(), ActivityListFragment.INSTANCE, binding.container.getId());
+        addFragment(getSupportFragmentManager(), ActivityListFragment.getInstance(bundle), binding.container.getId());
 
-//        fetchError();
+        fetchError();
     }
 
-//    private void fetchError() {
-//        viewModel.error.observe(MainActivity.this, err -> Log.e(LOG, err.getMessage()));
-//    }
+    private void fetchError() {
+        viewModel.error.observe(MainActivity.this, err -> {
+            if (err != null) {
+                Log.e(TAG, err.getMessage());
+            }
+        });
+    }
 }
